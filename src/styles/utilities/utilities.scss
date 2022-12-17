@@ -1,0 +1,37 @@
+// import fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+// import
+@import "mixins";
+
+// global variables
+//
+// typography
+$font-family: 'Inter', sans-serif;
+
+// font sizes
+$font-main-min: .875rem;
+$font-main-max: 1rem;
+
+$font-label-min: 1.125rem;
+$font-label-max: 1.5rem;
+
+$font-h1-min: 2.5rem;
+$font-h1-max: 5rem;
+
+$font-h2-min: 1.75rem;
+$font-h2-max: 3.75rem;
+
+// font weights
+$font-weight-regular: 400;
+$font-weight-semi: 500;
+$font-weight-bold: 700;
+
+// colors
+$black: #000000;
+$grey: #2a2a2a;
+$white: #ffffff;
+$button-pressed: #E0E0E0;
+
+// spacing
+$base-spacing: 4px;

@@ -1,0 +1,77 @@
+// global imports
+@import "../../styles/utilities/utilities";
+
+// hero banner styles
+.home-banner {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint(mobile) {
+        background-color: $black;
+        height: 70vh;
+    }
+
+    // image
+    &-image {
+        height: 100%;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            width: 100%;
+        }
+
+        @include breakpoint(mobile) {
+            img {
+                object-position: top;
+            }
+        }
+    }
+
+    // content
+    &-content {
+        align-self: center;
+        color: $white;
+        font-weight: $font-weight-semi;
+        grid-column: 7 / 12;
+
+        // container
+        &-container {
+            @include container();
+            height: 100%;
+        }
+
+        @include breakpoint(mobile) {
+            align-self: unset;
+            display: flex;
+            flex-direction: column;
+            grid-column: 1 / -1;
+
+            p {
+                background-color: $black;
+                margin: auto -20px 0;
+                padding: 20px;
+            }
+        }
+    }
+
+    // heading
+    &-heading {
+        color: $white;
+        font-size: $font-h1-max;
+        font-weight: $font-weight-semi;
+        line-height: 1;
+        margin: 0 0 #{$base-spacing * 8};
+
+        @include breakpoint(mobile) {
+            font-size: $font-h1-min;
+            position: relative;
+            top: 30%;
+        }
+    }
+}

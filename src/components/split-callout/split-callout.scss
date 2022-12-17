@@ -1,0 +1,116 @@
+// global imports
+@import "../../styles/utilities/utilities";
+
+// split callout
+.split-callout {
+    background: $black;
+    padding-top: $base-spacing * 20;
+    padding-bottom: $base-spacing * 20;
+
+    @include breakpoint(mobile) {
+        padding-top: $base-spacing * 10;
+        padding-bottom: $base-spacing * 10;
+    }
+
+    // container
+    &-container {
+        @include container();
+    }
+
+    // content
+    &-content {
+        align-self: center;
+        color: $white;
+        grid-column: 1 / 6;
+        padding: $base-spacing * 6;
+    }
+
+    // label
+    &-label {
+        color: $white;
+        font-size: $font-label-max;
+        font-weight: $font-weight-semi;
+        margin: 0;
+
+        @include breakpoint(mobile) {
+            font-size: $font-label-min;
+        }
+    }
+
+    // heading
+    &-heading {
+        color: $white;
+        font-size: $font-h2-max;
+        font-weight: $font-weight-semi;
+        line-height: 1;
+        margin: 0 0 #{$base-spacing * 8};
+
+        @include breakpoint(mobile) {
+            font-size: $font-h2-min;
+            margin: #{$base-spacing * 2} 0 #{$base-spacing * 5};
+        }
+    }
+
+    // image
+    &-image {
+        grid-column: 7 / 13;
+
+        img {
+            width: 100%;
+        }
+
+        @include breakpoint(mobile) {
+            grid-column: 1/ -1;
+            grid-row: 1;
+            margin-bottom: $base-spacing * 5;
+        }
+    }
+
+    // list
+    &-list {
+        display: grid;
+        grid-gap: 0 #{$base-spacing * 2};
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: auto;
+        list-style-type: none;
+        margin: #{$base-spacing * 8} 0 0;
+        padding: 0;
+
+        @include breakpoint(mobile) {
+            grid-template-columns: 100%;
+        }
+
+        // item
+        &-item {
+            display: inline-block;
+            margin: 0;
+
+            @include breakpoint(mobile) {
+                display: block;
+                margin: #{$base-spacing * 4} 0;
+            }
+        }
+
+        // button
+        &-button {
+            background-color: $white;
+            border-radius: 25px;
+            color: $grey;
+            display: block;
+            font-weight: $font-weight-bold;
+            padding: #{$base-spacing * 3};
+            text-align: center;
+            text-decoration: none;
+            transition: background-color .25s cubic-bezier(.3,.05,.25,.95);
+
+            &:active {
+                background-color: $button-pressed;
+            }
+
+            @include breakpoint(mobile) {
+                font-size: 18px;
+                width: 100%;
+            }
+        }
+    }
+}

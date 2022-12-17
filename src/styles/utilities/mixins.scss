@@ -1,0 +1,30 @@
+// global mixins
+//
+// breakpoint
+@mixin breakpoint($point) {
+    @if $point == mobile {
+        @media (max-width: 1023px) { @content; }
+    }
+}
+
+// container
+@mixin container() {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    margin: 0 auto;
+    max-width: 1380px;
+    padding: 0 10px;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+
+
