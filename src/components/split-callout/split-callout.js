@@ -5,7 +5,28 @@ import "./split-callout.scss";
 import splitCalloutImage from '../../assets/icons-remastered-online-lp-rmst-nuptse-d.jpg';
 import splitCalloutImageMobile from '../../assets/icons-remastered-online-lp-rmst-nuptse-m.jpg';
 
+// import dependencies
+import { useEffect } from "react";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const SplitCallout = ({...callout}) => {
+    useEffect(() => {
+        let calloutImage = document.querySelectorAll('.split-callout-image');
+
+        gsap.fromTo(calloutImage, {yPercent: 20}, {yPercent: 0,
+            scrollTrigger: {
+                trigger: calloutImage,
+                start: () => "top bottom",
+                end: () => "top top-=100",
+                scrub: true,
+                once: true
+            }
+        });
+    });
+
     return (
         <div className={`${callout.styleName}`}>
             <div className={`${callout.styleName}-container`}>
